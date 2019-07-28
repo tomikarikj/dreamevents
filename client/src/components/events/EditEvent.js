@@ -51,6 +51,11 @@ const EditEvent = ({ updateEvent, history }) => {
                     required
                     onChange={e => onChange(e)}
                   />
+                  <small>
+                    The ID can be found in the URL: /event/
+                    <span className="text-danger">here-is-the-id</span>/edit
+                    <br /> Just copy it and paste it here.
+                  </small>
                 </div>
                 <div className="form-group">
                   <label className="mt-2" htmlFor="name">
