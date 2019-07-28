@@ -10,7 +10,7 @@ import {
 
 export const getEvents = () => async dispatch => {
   try {
-    const res = await axios.get('http://localhost:5000/api/events');
+    const res = await axios.get('api/events');
 
     dispatch({
       type: GET_EVENTS,
@@ -26,7 +26,7 @@ export const getEvents = () => async dispatch => {
 
 export const getEventById = id => async dispatch => {
   try {
-    const res = await axios.get(`http://localhost:5000/api/events/${id}`);
+    const res = await axios.get(`api/events/${id}`);
 
     dispatch({
       type: GET_EVENT,
@@ -54,11 +54,7 @@ export const addEvent = ({ name, date, description }) => async dispatch => {
   });
 
   try {
-    const res = await axios.post(
-      'http://localhost:5000/api/events',
-      body,
-      config
-    );
+    const res = await axios.post('api/events', body, config);
 
     dispatch({
       type: ADD_EVENT,
@@ -97,11 +93,7 @@ export const updateEvent = ({
   });
 
   try {
-    const res = await axios.put(
-      `http://localhost:5000/api/events/${id}`,
-      body,
-      config
-    );
+    const res = await axios.put(`api/events/${id}`, body, config);
 
     dispatch({
       type: UPDATE_EVENT,
@@ -122,7 +114,7 @@ export const updateEvent = ({
 
 export const deleteEvent = id => async dispatch => {
   try {
-    await axios.delete(`http://localhost:5000/api/events/${id}`);
+    await axios.delete(`api/events/${id}`);
 
     dispatch({
       type: DELETE_EVENT,
